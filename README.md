@@ -15,4 +15,4 @@ To do:
 5.  Configure "mail/skyskiGmail" JavaMail session.  
 6.  Add user (User ID: user, Group List: appuser) to default-config > Security > Realms > file.  
 
-Technical note: WEB module contains EJB classes.  
+Technical note: WEB module contains EJB classes, skyski folder contains Eclipse IDE project.
