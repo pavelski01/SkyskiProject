@@ -1,0 +1,12 @@
+.animation-1-focus:HOVER #first span:FIRST-CHILD { animation-name:blinker1; }
+.animation-2-focus:HOVER #first span:NTH-CHILD(2) { animation-name:blinker2; }
+.animation-3-focus:HOVER #first span:LAST-CHILD { animation-name:blinker3; }
+.animation-4-focus:HOVER #second span:FIRST-CHILD { animation-name:blinker4; }
+.animation-5-focus:HOVER #second span:NTH-CHILD(2) { animation-name:blinker5; }
+.animation-6-focus:HOVER #second span:LAST-CHILD { animation-name:blinker6; }
+.animation-7-focus:HOVER #division { animation-name:blinker7; }
+.content-1:HOVER :AFTER { content:"\0020\0020\0020\2b06\0041\002d\005a\2b07"; }
+.content-2:HOVER :AFTER { content:"\0020\0020\0020\2b07\0030\002d\0039\2b06"; }
+.cubic-bezier-timing-focus:HOVER * { animation-timing-function:cubic-bezier(.5,0,1,1); }
+.duration-10-focus:HOVER * { animation-duration:10s; }
+.infinite-iteration-focus:HOVER * { animation-iteration-count:infinite; }

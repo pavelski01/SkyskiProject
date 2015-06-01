@@ -1,0 +1,12 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+	<div id="subcontent">
+		<div class="container">
+			<div class="absolute-position left-0 right-0 top-120">
+				<div class="auto-margin family-3 justify-align size-27 width-800" id="description">
+					<h:outputText value="#{msgs.description}" />
+				</div>
+				<h:link id="bibliography" outcome="bibliography" styleClass="absolute-position auto-margin black-shadow bolder-weight bottom-padding-30 center-align grey-color-focus grey-inset-border-5-focus grey-outset-border-5 inherit-color left-0 left-padding-80 linear-gradient-bottom-black0-red50-black100 linear-gradient-bottom-red0-black50-red100-focus none-decoration radius-40 right-0 right-padding-80 top-200 top-padding-30 width-200" title="#{msgs.bibliography}" value="#{fn:toUpperCase(msgs.bibliography)}" />
+			</div>
+		</div>
+	</div>
+</ui:composition>

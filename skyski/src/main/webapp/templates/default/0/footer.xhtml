@@ -1,0 +1,39 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+	<div class="bottom-0 bottom-margin-25 fixed-position width-100" id="footer">
+		<div class="container">
+			<hr class="grey-inset-border-5-focus grey-outset-border-5 white-color" />
+			<div class="relative-position top-margin--15 white-color">
+				<div class="absolute-position bottom-padding-5 family-6 grey-inset-border-5-focus grey-outset-border-5 index-3 left-0 left-padding-30 linear-gradient-right-black0-red100-focus linear-gradient-right-red0-black100 min-height-20 radius-10-60-10-10 right-padding-30 top-margin--15 top-padding-5" id="generated"><h:outputFormat value="#{msgs.generated}"><f:param value="#{currentDate}" /></h:outputFormat></div>
+				<div id="validator">
+					<div class="absolute-position bottom--25 index-1 left-35 top-margin--15">
+						<a href="http://validator.w3.org/check?uri=referer">
+							<img alt="Valid XHTML 1.0 Transitional" class="opacity-80-focus radius-10" src="#{resource['default:png/valid-xhtml10.png']}" />
+						</a>
+					</div>					
+					<div class="absolute-position bottom--25 index-2 right-35">
+						<a href="http://jigsaw.w3.org/css-validator/check/referer">
+							<img alt="Valid CSS3" class="opacity-80-focus radius-10" src="#{resource['default:png/valid-css3.png']}" />
+						</a>
+					</div>
+				</div>
+				<div class="absolute-position bottom-padding-5 family-6 grey-inset-border-5-focus grey-outset-border-5 index-4 left-padding-30 linear-gradient-right-black0-red100 linear-gradient-right-red0-black100-focus min-height-20 radius-60-10-10-10 right-0 right-padding-30 top-margin--15 top-padding-5" id="copyright"><h:outputText value="#{msgs.copyright}" /><span class="family-4"><h:outputText value="#{msgs.author}" /></span></div>
+				<h:panelGroup layout="block" styleClass="absolute-position bottom--25 center-align index-0 left-0 right-0">
+					<h:form>
+						<h:commandLink action="#{currency.localeChange}" immediate="true">
+							<f:param name="loc" value="en" />
+							<h:graphicImage alt="en" library="default" name="png/britain.png" />
+						</h:commandLink>
+						<h:commandLink action="#{currency.localeChange}" immediate="true">
+							<f:param name="loc" value="pl" />
+							<h:graphicImage alt="pl" library="default" name="png/poland.png" />
+						</h:commandLink>
+						<h:commandLink action="#{currency.localeChange}" immediate="true">
+							<f:param name="loc" value="ru" />
+							<h:graphicImage alt="ru" library="default" name="png/russia.png" />
+						</h:commandLink>
+					</h:form>
+				</h:panelGroup>
+			</div>
+		</div>
+	</div>
+</ui:composition>

@@ -1,0 +1,14 @@
+<ui:composition xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+	<c:choose>
+		<c:when test="#{msgs.reversed eq 'true'}">
+			<h:outputText value="#{msgs.bibliography}" />
+			<h:outputText value="&#160;" />
+			<h:outputText value="#{msgs.company}" />
+		</c:when>
+		<c:otherwise>
+			<h:outputText value="#{msgs.company}" />
+			<h:outputText value="&#160;" />
+			<h:outputText value="#{msgs.bibliography}" />
+		</c:otherwise>
+	</c:choose>
+</ui:composition>

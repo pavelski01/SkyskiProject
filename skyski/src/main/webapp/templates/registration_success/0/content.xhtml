@@ -1,0 +1,20 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+	<div class="auto-overflow black-background-alpha50 bottom-70 bottom-padding-30 fixed-position grey-inset-border-5-focus grey-outset-border-5 left-35-x left-padding-100 radius-35-35-200-200 right-35-x right-padding-100 top-190 top-padding-30 white-color" id="content">
+		<div class="container">
+			<ui:param name="fname" value="#{ flash['fname'] eq null ? '' : flash['fname'] }" />
+			<h:panelGroup layout="block" styleClass="auto-margin absolute-position auto-margin bolder-weight bottom-padding-30 center-align family-3 grey-outset-border-5 left-0 left-padding-60 radius-20 right-0 right-padding-60 size-25 top-120 top-padding-30 width-600">
+				<br />
+				<h:outputText value="#{msgs.registeringThanks}" />
+				<h:outputText rendered="#{flash['fname'] ne null}" value=", " />
+				<h:outputText styleClass="red-color" value="#{fname}" />
+				<h:outputText value="." />
+				<br />
+				<br />
+				<h:outputText value="#{msgs.yourLogin}: " />
+				<h:outputText styleClass="red-color" value="#{flash['login']}" />
+				<br />
+				<h:outputText value="&#160;" />
+			</h:panelGroup>			
+		</div>
+	</div>
+</ui:composition>

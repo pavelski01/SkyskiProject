@@ -1,0 +1,9 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+	<div class="center-align nowrap-space" id="menu">
+		<div class="container">
+			<h:link outcome="index" styleClass="black-shadow bolder-weight bottom-padding-20 grey-color-focus grey-inset-border-5-focus grey-outset-border-5 inherit-color left-padding-50 linear-gradient-right-black0-red100-focus linear-gradient-right-black40-red100 none-decoration radius-60-10-10-60 right-margin-5 right-padding-50 top-padding-20" title="#{msgs.mainSite}" value="#{fn:toUpperCase(msgs.mainSite)}" />
+			<h:link outcome="shop" styleClass="black-shadow bolder-weight bottom-padding-20 grey-color-focus grey-inset-border-5-focus grey-outset-border-5 inherit-color left-margin-5 left-padding-50 linear-gradient-bottom-black0-red50-black100 linear-gradient-bottom-red0-black50-red100-focus none-decoration radius-10 right-margin-5 right-padding-50 top-padding-20" title="#{msgs.shop}" value="#{fn:toUpperCase(msgs.shop)}" />
+			<h:link outcome="registration" styleClass="black-shadow bolder-weight bottom-padding-20 grey-inset-border-5-focus grey-color-focus grey-outset-border-5 inherit-color left-margin-5 left-padding-50 linear-gradient-right-red0-black100-focus linear-gradient-right-red0-black60 radius-10-60-60-10 none-decoration right-padding-50 top-padding-20" title="#{msgs.registration}" value="#{fn:toUpperCase(msgs.registration)}" />
+		</div>
+	</div>
+</ui:composition>

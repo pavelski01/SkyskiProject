@@ -1,0 +1,17 @@
+.black-color-focus:HOVER { color:#000 !important; }
+.grey-color-focus:HOVER { color:#999 !important; }
+.grey-inset-border-10-focus:HOVER { border:10px inset #777 !important; }
+.grey-inset-border-5-focus:HOVER { border:5px inset #777 !important; }
+.grey-outset-border-5-focus:HOVER { border:5px outset #777 !important; }
+.linear-gradient-bottom-black0-white50-black100-focus:HOVER { background:linear-gradient(to bottom,rgba(0,0,0,1) 0%,rgba(255,255,255,1) 50%,rgba(0,0,0,1) 100%) !important; }
+.linear-gradient-bottom-black0-white50-black100-alpha50-focus:HOVER { background:linear-gradient(to bottom,rgba(0,0,0,.5) 0%,rgba(255,255,255,.5) 50%,rgba(0,0,0,.5) 100%) !important; }
+.linear-gradient-bottom-blue0-black50-blue100-focus:HOVER { background:linear-gradient(to bottom,rgba(0,0,255,1) 0%,rgba(0,0,0,1) 50%,rgba(0,0,255,1) 100%) !important; }
+.linear-gradient-bottom-red0-black50-red100-focus:HOVER { background:linear-gradient(to bottom,rgba(255,0,0,1) 0%,rgba(0,0,0,1) 50%,rgba(255,0,0,1) 100%) !important; }
+.linear-gradient-left-blue10-black100-focus:HOVER { background:linear-gradient(to left,rgba(0,0,255,1) 10%,rgba(0,0,0,1) 100%) !important; }
+.linear-gradient-right-black0-red100-focus:HOVER { background:linear-gradient(to right,rgba(0,0,0,1) 0%,rgba(255,0,0,1) 100%) !important; }
+.linear-gradient-right-red0-black100-focus:HOVER { background:linear-gradient(to right,rgba(255,0,0,1) 0%,rgba(0,0,0,1) 100%) !important; }
+.opacity-80-focus:HOVER { opacity:0.8 !important; }
+.scale-150-focus:HOVER { transform:scale(1.5, 1.5) !important; }
+.white-background-focus:HOVER { background:#fff !important; }
+.white-inset-border-10-focus:HOVER { border:10px inset #fff !important; }
+.white-outset-border-10-focus:HOVER { border:10px outset #fff !important; }

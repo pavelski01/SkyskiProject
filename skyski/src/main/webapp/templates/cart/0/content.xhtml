@@ -1,0 +1,132 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+	<div class="auto-overflow black-background-alpha50 bottom-70 bottom-padding-30 fixed-position grey-inset-border-5-focus grey-outset-border-5 left-35-x left-padding-100 radius-35-35-200-200 right-35-x right-padding-100 top-190 top-padding-30 white-color" id="content">
+    	<h:form>
+    		<h:panelGroup id="carttable">
+			    <table class="auto-margin grey-inset-border-5 grey-outset-border-5-focus padding-20 radius-30-30-100-100">
+			    	<thead>
+			    		<tr class="black-shadow bolder-weight center-align nowrap-space">
+			    			<td class="bottom-padding-30">
+			    				<div class="block-display bottom-top-padding grey-outset-border-5 linear-gradient-bottom-white0-black50-white100-alpha50 padding-20 radius-60-10-10-60">
+			    					<h:outputText value="#{fn:toUpperCase(msgs.numeroSign)}" />
+			    				</div>
+			    			</td>
+		    				<td class="bottom-padding-30 content-1">				    				
+		    					<h:commandLink action="#{cart.sortByName}" styleClass="block-display grey-color-focus grey-inset-border-5-focus grey-outset-border-5 inherit-color linear-gradient-bottom-black0-red50-black100 linear-gradient-bottom-red0-black50-red100-focus none-decoration padding-20 radius-10" title="#{msgs.sortByName}">
+		    						<f:ajax render="carttable" />
+		    						<h:outputText value="#{fn:toUpperCase(msgs.name)}" />
+		    					</h:commandLink>				    						    					    				
+		    				</td>
+			    			<td class="bottom-padding-30 content-2">					    			
+			    				<h:commandLink action="#{cart.sortByPrice}" styleClass="block-display grey-color-focus grey-inset-border-5-focus grey-outset-border-5 inherit-color linear-gradient-bottom-black0-red50-black100 linear-gradient-bottom-red0-black50-red100-focus none-decoration padding-20 radius-10" title="#{msgs.sortByPrice}">
+		    						<f:ajax render="carttable" />
+		    						<h:outputText value="#{fn:toUpperCase(msgs.price)}" />
+			    				</h:commandLink>				    			
+			    			</td>
+			    			<td class="bottom-padding-30 content-2">					    			
+			    				<h:commandLink action="#{cart.sortByAmount}" styleClass="block-display grey-color-focus grey-inset-border-5-focus grey-outset-border-5 inherit-color linear-gradient-bottom-black0-red50-black100 linear-gradient-bottom-red0-black50-red100-focus none-decoration padding-20 radius-10" title="#{msgs.sortByAmount}">
+			    					<f:ajax render="carttable" />
+			    					<h:outputText value="#{fn:toUpperCase(msgs.amount)}" />
+			    				</h:commandLink>					    			
+			    			</td>
+			    			<td class="bottom-padding-30 content-2">					    			
+			    				<h:commandLink action="#{cart.sortBySum}" styleClass="block-display grey-color-focus grey-inset-border-5-focus grey-outset-border-5 inherit-color linear-gradient-bottom-black0-red50-black100 linear-gradient-bottom-red0-black50-red100-focus none-decoration padding-20 radius-10" title="#{msgs.sortBySum}">
+			    					<f:ajax render="carttable" />
+			    					<h:outputText value="#{fn:toUpperCase(msgs.sum)}" />
+			    				</h:commandLink>					    			
+			    			</td>
+			    			<td class="bottom-padding-30">
+			    				<div class="block-display grey-outset-border-5 inherit-color linear-gradient-bottom-white0-black50-white100-alpha50 none-decoration padding-20 radius-10">				    			
+			    					<h:outputText value="#{fn:toUpperCase(msgs.remove)}" />
+			    				</div>
+			    			</td>
+			    		</tr>
+			    	</thead>
+			    	<tfoot>
+			    		<tr class="center-align">
+			    			<td class="top-padding-30" colspan="6">
+			    				<h:link outcome="shop" title="#{msgs.return}" styleClass="auto-margin black-shadow bolder-weight bottom-padding-20 grey-color-focus grey-inset-border-5 grey-outset-border-5-focus inherit-color left-padding-80 linear-gradient-bottom-black0-red50-black100 linear-gradient-bottom-red0-black50-red100-focus none-decoration radius-40 right-padding-80 table-display top-padding-20" value="&#60;&#60;&#160;#{fn:toUpperCase(msgs.return)}" />
+			    			</td>
+			    		</tr>
+			    	</tfoot>
+			    	<tbody>
+				    	<ui:repeat value="#{cart.filterModel}" var="item" varStatus="status">
+				    		<tr class="vertical-middle">
+				    			<td class="bold-weight right-align right-padding-10">
+				    				<h:outputText value="#{status.index + 1}" />
+				    				<h:outputText value="&#46;&#160;" />
+				    			</td>
+				    			<td class="left-align left-padding-100">
+				    				<h:outputText value="#{fn:toUpperCase(fn:substring(item.name, 0, 1))}#{fn:toLowerCase(fn:substring(item.name, 1, fn:length(item.name)))}" />
+				    			</td>
+				    			<td class="right-align right-padding-60">
+				    				<h:outputText value="#{item.price}">
+										<f:convertNumber maxFractionDigits="2" minFractionDigits="2" />
+									</h:outputText>
+									<h:outputText styleClass="left-padding-10" value="#{currency.symbol}&#160;" />
+				    			</td>
+				    			<td class="right-align right-padding-80">
+					    			<h:outputText rendered="#{!item.countable}" value="#{item.amount}">
+										<f:convertNumber maxFractionDigits="2" minFractionDigits="2" />
+									</h:outputText>
+									<h:outputText escape="true" rendered="#{!item.countable}" value="&#160;" />
+									<h:outputText rendered="#{!item.countable}" value="#{msgs.kilogram}" />
+									<h:outputText rendered="#{item.countable}" value="#{item.amount}">
+										<f:convertNumber integerOnly="true" />
+									</h:outputText>
+									<h:outputText escape="true" rendered="#{item.countable}" value="&#160;" />
+									<h:outputText rendered="#{item.countable}" value="#{msgs.pice}" />
+									<h:outputText styleClass="left-padding-10" value="&#160;" />
+				    			</td>						    			
+				    			<td class="right-align right-padding-80">
+				    				<h:outputText value="#{item.amount * item.price}">
+										<f:convertNumber maxFractionDigits="2" minFractionDigits="2" />
+									</h:outputText>
+									<h:outputText styleClass="left-padding-10" value="#{currency.symbol}&#160;" />
+				    			</td>
+				    			<td class="center-align">						    				
+									<h:commandButton action="#{cart.remove}" id="removeButtonAC" immediate="true" rendered="#{authenticate.loggedIn}" styleClass="black-background black-color-focus bold-weight bottom-padding-5 left-padding-10 radius-20 right-padding-10 top-padding-5 white-background-focus white-color" title="#{msgs.removeFromCart}" value="#{msgs.removeFromCart}">
+										<f:setPropertyActionListener target="#{cart.id}" value="#{item.id}" />
+									</h:commandButton>																						
+									<h:commandButton disabled="#{!authenticate.loggedIn}" id="removeButtonPV" rendered="#{!authenticate.loggedIn}" styleClass="black-color bold-weight bottom-padding-5 grey-background left-padding-10 radius-20 right-padding-10 top-padding-5" title="#{msgs.removeFromCart}" value="#{msgs.removeFromCart}" />
+				    			</td>
+				    		</tr>
+				    	</ui:repeat>
+				    	<tr>
+				    		<td>
+				    			<br />
+				    			<br />
+				    		</td>
+				    	</tr>
+				    	<tr>
+				    		<td />
+				    		<td class="left-padding-150 right-padding-150" />
+				    		<td class="left-padding-100 right-padding-100" />
+				    		<td class="left-padding-150 right-padding-150" />
+				    		<td class="left-padding-80 right-padding-80 white-solid-border-top-2">
+				    			<h:outputText value="#{cart.sum}">
+				    				<f:convertNumber maxFractionDigits="2" minFractionDigits="2" />
+				    			</h:outputText>
+				    			<h:outputText styleClass="left-padding-10" value="#{currency.symbol}&#160;" />
+				    		</td>
+				    		<td class="black-black-shadow bold-weight bottom-padding-5 center-align grey-inset-border-5 left-padding-80 linear-gradient-bottom-white0-black50-white100-alpha50 nowrap-space radius-20 right-padding-80">
+				    			<h:outputText value="#{fn:toUpperCase(msgs.total)}" />
+				    		</td>
+				    	</tr>					    	
+				    	<tr>
+				    		<td />
+				    		<td />
+				    		<td />
+				    		<td />
+				    		<td />
+				    		<td>
+			    				<h:commandLink action="#{cart.send}" styleClass="black-black-shadow block-display bold-weight center-align grey-color-focus grey-inset-border-5-focus grey-outset-border-5 inherit-color linear-gradient-bottom-black0-red50-black100 linear-gradient-bottom-red0-black50-red100-focus none-decoration padding-20 radius-20" title="#{msgs.submit}">
+		    						<h:outputText value="#{fn:toUpperCase(msgs.submit)}" />
+		    					</h:commandLink>
+			    			</td>
+				    	</tr>						    	
+			    	</tbody>
+			    </table>
+		    </h:panelGroup>
+	    </h:form>
+	</div>
+</ui:composition>

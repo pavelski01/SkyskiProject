@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+	<h:head>
+		<ui:insert name="head">
+			<ui:include src="0/head.xhtml" />
+		</ui:insert>
+	</h:head>
+	<h:body styleClass="linear-gradient-right-red0-black20-black80-red100 margin-0">
+		<f:view locale="#{currency.localizationLocale}">
+			<div class="container">			
+				<ui:insert name="header">
+					<ui:include src="0/header.xhtml" />
+				</ui:insert>			
+				<ui:insert name="content">
+					<ui:include src="0/content.xhtml" />
+				</ui:insert>			
+				<ui:insert name="footer">
+					<ui:include src="0/footer.xhtml" />
+				</ui:insert>
+			</div>
+			<ui:debug hotkey="x" rendered="#{initParam['javax.faces.PROJECT_STAGE'] eq 'Development'}" />
+		</f:view>
+	</h:body>
+</html>

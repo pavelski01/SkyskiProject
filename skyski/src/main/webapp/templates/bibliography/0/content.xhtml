@@ -1,0 +1,105 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+	<div class="auto-overflow black-background-alpha50 bottom-70 bottom-padding-30 fixed-position grey-inset-border-5-focus grey-outset-border-5 left-35-x left-padding-100 radius-35-35-200-200 right-35-x right-padding-100 top-190 top-padding-30 white-color" id="content">
+		<div class="container">
+		    <div id="bibliographyform">
+		    	<f:ajax render="bibliographytable">
+			    	<h:form>		    	
+			    		<h:panelGroup id="bibliographytable">
+						    <table class="auto-margin grey-inset-border-5 grey-outset-border-5-focus padding-20 radius-30-30-100-100">
+						    	<thead>
+						    		<tr class="black-shadow bolder-weight center-align nowrap-space">
+						    			<td class="bottom-padding-30">
+						    				<div class="block-display bottom-top-padding grey-outset-border-5 linear-gradient-bottom-white0-black50-white100-alpha50 padding-20 radius-60-10-10-60">
+						    					<h:outputText value="#{fn:toUpperCase(msgs.numeroSign)}" />
+						    				</div>
+						    			</td>			    			
+					    				<td class="bottom-padding-30 content-1">				    				
+					    					<h:commandLink action="#{bibliography.sortByAuthors}" id="authors" styleClass="block-display grey-color-focus grey-inset-border-5-focus grey-outset-border-5 inherit-color linear-gradient-bottom-black0-red50-black100 linear-gradient-bottom-red0-black50-red100-focus none-decoration padding-20 radius-10" title="#{msgs.sortByAuthors}">
+					    						<h:outputText value="#{fn:toUpperCase(msgs.booksAuthors)}" />
+					    					</h:commandLink>				    						    					    				
+					    				</td>
+						    			<td class="bottom-padding-30 content-1">					    			
+						    				<h:commandLink action="#{bibliography.sortByTitles}" id="title" styleClass="block-display grey-color-focus grey-inset-border-5-focus grey-outset-border-5 inherit-color linear-gradient-bottom-black0-red50-black100 linear-gradient-bottom-red0-black50-red100-focus none-decoration padding-20 radius-10" title="#{msgs.sortByTitle}">
+					    						<h:outputText value="#{fn:toUpperCase(msgs.booksTitles)}" />
+						    				</h:commandLink>				    			
+						    			</td>
+						    			<td class="bottom-padding-30 content-2 width-400">					    			
+						    				<h:commandLink action="#{bibliography.sortByPublication}" id="publication" styleClass="block-display grey-color-focus grey-inset-border-5-focus grey-outset-border-5 inherit-color linear-gradient-bottom-black0-red50-black100 linear-gradient-bottom-red0-black50-red100-focus none-decoration padding-20 radius-10" title="#{msgs.sortByPublication}">
+						    					<h:outputText value="#{fn:toUpperCase(msgs.placeAndYearOfPublication)}" />
+						    				</h:commandLink>					    			
+						    			</td>
+						    		</tr>
+						    	</thead>
+						    	<tfoot>
+						    		<tr class="center-align">
+						    			<td class="top-padding-30" colspan="4">
+						    				<h:link outcome="index" title="#{msgs.return}" styleClass="auto-margin black-shadow bolder-weight bottom-padding-20 grey-color-focus grey-inset-border-5 grey-outset-border-5-focus inherit-color left-padding-80 linear-gradient-bottom-black0-red50-black100 linear-gradient-bottom-red0-black50-red100-focus none-decoration radius-40 right-padding-80 table-display top-padding-20" value="&#60;&#60;&#160;#{fn:toUpperCase(msgs.return)}" />
+						    			</td>
+						    		</tr>
+						    	</tfoot>
+						    	<tbody>
+							    	<ui:repeat value="#{bibliography.filterModel}" var="item" varStatus="status">
+							    		<tr class="vertical-top">
+							    			<td class="bold-weight right-align right-padding-10">
+							    				<h:outputText value="#{status.index + 1}" />
+							    				<h:outputText value="&#46;" />
+							    			</td>
+							    			<td>
+							    				<ui:repeat value="#{item.forename}" var="fname" varStatus="counterF">
+							    					<ui:repeat value="#{item.surname}" var="lname" varStatus="counterL">
+							    						<h:panelGroup rendered="#{counterF.index eq counterL.index}">
+								    						<h:outputText value="#{fn:substring(fname,0,1)}" />
+								    						<h:outputText value="&#46;&#160;" />
+								    						<h:outputText value="#{lname}" />
+								    						<h:outputText rendered="#{not counterF.last}" value="&#44;&#160;" />
+								    						<h:outputText escape="false" rendered="#{(counterF.index + 1) mod 3 eq 0 and not counterF.last}" value="&#60;br&#32;&#47;&#62;" />
+								    					</h:panelGroup>
+							    					</ui:repeat>
+							    				</ui:repeat>
+							    			</td>
+							    			<td>
+							    				<h:outputText value="#{item.title}" />
+							    				<h:outputText value="&#46;&#160;" />
+							    				<h:panelGroup rendered="#{not empty item.volume}">
+							    					<h:panelGroup rendered="#{msgs.reversed eq 'true'}">
+								    					<h:outputText value="#{msgs.volume}" />
+								    					<h:outputText value="&#160;" />
+														<h:outputText value="#{item.volume}" />
+														<h:outputText value="&#44;&#160;" />
+							    					</h:panelGroup>
+							    					<h:panelGroup rendered="#{msgs.reversed eq 'false'}">		    					
+								    					<h:outputText value="#{fn:substring(msgs.volume,0,3)}" />		    					
+								    					<h:outputText value="&#46;&#160;" />
+														<h:outputText value="#{item.volume}" />
+														<h:outputText value="&#44;&#160;" />
+							    					</h:panelGroup>
+							    				</h:panelGroup>
+							    				<h:panelGroup rendered="#{not empty item.edition}">
+							   						<h:panelGroup rendered="#{msgs.reversed eq 'true'}">
+								   						<h:outputText value="#{fn:substring(msgs.edition,0,3)}" />
+														<h:outputText value="&#46;&#160;" />
+														<h:outputText value="#{item.edition}" />
+													</h:panelGroup>
+													<h:panelGroup rendered="#{msgs.reversed eq 'false'}">
+														<h:outputText value="#{item.edition}" />
+														<h:outputText value="&#160;" />
+														<h:outputText value="#{msgs.edition}" />
+													</h:panelGroup>
+							    				</h:panelGroup>
+							    			</td>
+							    			<td class="center-align">
+							    				<h:outputText value="#{item.placeOfPublication}" />
+							    				<h:outputText value="&#160;" />
+							    				<h:outputText value="#{item.yearOfPublication}" />
+							    			</td>
+							    		</tr>
+							    	</ui:repeat>
+						    	</tbody>
+						    </table>
+					    </h:panelGroup>				
+				    </h:form>
+		   		</f:ajax>
+		   	</div>
+		</div>
+	</div>
+</ui:composition>

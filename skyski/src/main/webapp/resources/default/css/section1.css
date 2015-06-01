@@ -1,0 +1,171 @@
+.absolute-position { position:absolute; }
+.auto-margin { margin:0 auto; }
+.auto-overflow { overflow:auto; }
+.background-1 { background:url("#{resource['default:jpg/OneOfThePavilionsOfTheFruitsAndVegetablesSectorInTheRungisInternationalMarketParisInBlue.jpg']}") no-repeat fixed center center / 100% 100% #00f; }
+.black-background { background:#000; }
+.black-background-alpha50 { background:rgba(0,0,0,.5); }
+.black-black-shadow { text-shadow:1px 1px #000,1px -1px #000,-1px 1px #000,-1px -1px #000,2px 2px #000,2px -2px #000,-2px 2px #000,-2px -2px #000; }
+.black-color { color:#000; }
+.black-shadow { text-shadow:1px 1px #000,1px -1px #000,-1px 1px #000,-1px -1px #000; }
+.block-display { display:block; }
+.black-white-shadow { text-shadow:1px 1px #000,1px -1px #000,-1px 1px #000,-1px -1px #000,2px 2px #000,2px -2px #000,-2px 2px #000,-2px -2px #000; }
+.bold-weight { font-weight:bold; }
+.bolder-weight { font-weight:bolder; }
+.bottom--25 { bottom:-25px; }
+.bottom-0 { bottom:0; }
+.bottom-15 { bottom:15px; }
+.bottom-25 { bottom:25px; }
+.bottom-70 { bottom:70px; }
+.bottom-190 { bottom:190px; }
+.bottom-margin-10 { margin-bottom:10px; }
+.bottom-margin-15 { margin-bottom:15px; }
+.bottom-margin-20 { margin-bottom:20px; }
+.bottom-margin-25 { margin-bottom:25px; }
+.bottom-padding-5 { padding-bottom:5px; }
+.bottom-padding-20 { padding-bottom:20px; }
+.bottom-padding-30 { padding-bottom:30px; }
+.bottom-padding-35 { padding-bottom:35px; }
+.bottom-padding-40 { padding-bottom:40px; }
+.center-align {	text-align:center; }
+.family-1 { font-family:AndantinoScriptRegular; }
+.family-2 {	font-family:BernardMTCondensedRegular; }
+.family-3 { font-family:ComfortaaRegular; }
+.family-4 { font-family:DollieScriptPersonalUseRegular; }
+.family-5 { font-family:GillSansBoldCondensedRegular; }
+.family-6 { font-family:MaximalBeastsRegular; }
+.fixed-position { position:fixed; }
+.grey-alpha20-background { background:rgba(128,128,128,0.2); }
+.grey-background { background-color:#bbb; }
+.grey-inset-border-5 { border:5px inset #777; }
+.grey-inset-border-10 { border:10px inset #777; }
+.grey-outset-border-5 { border:5px outset #777; }
+.grey-outset-border-10 { border:10px outset #777; }
+.height-30 { height:30px; }
+.height-40 { height:40px; }
+.hidden-overflow { overflow:hidden; }
+.index-0 { z-index:0; }
+.index-1 { z-index:1; }
+.index-2 { z-index:2; }
+.index-3 { z-index:3; }
+.index-4 { z-index:4; }
+.inherit-color { color:inherit; }
+.justify-align { text-align:justify; }
+.left-0 { left:0; }
+.left-35 { left:35%; }
+.left-35-x { left:35px; }
+.left-50 { left:50%; }
+.left-50-x { left:50px; }
+.left-align { text-align:left; }
+.left-float { float:left; }
+.left-margin-5 { margin-left:5px; }
+.left-margin-30 { margin-left:30px; }
+.left-margin-35 { margin-left:35px; }
+.left-margin-auto { margin-left:auto; }
+.left-padding-10 { padding-left:10px; }
+.left-padding-20 { padding-left:20px; }
+.left-padding-30 { padding-left:30px; }
+.left-padding-50 { padding-left:50px; }
+.left-padding-60 { padding-left:60px; }
+.left-padding-80 { padding-left:80px; }
+.left-padding-100 { padding-left:100px; }
+.left-padding-150 { padding-left:150px; }
+.linear-gradient-bottom-black0-blue50-black100 { background:linear-gradient(to bottom,rgba(0,0,0,1) 0%,rgba(0,0,255,1) 50%,rgba(0,0,0,1) 100%); }
+.linear-gradient-bottom-black0-grey50-black100 { background:linear-gradient(to bottom,rgba(0,0,0,1) 0%,rgba(127,127,127,1) 50%,rgba(0,0,0,1) 100%); }
+.linear-gradient-bottom-black0-red50-black100 { background:linear-gradient(to bottom,rgba(0,0,0,1) 0%,rgba(255,0,0,1) 50%,rgba(0,0,0,1) 100%); }
+.linear-gradient-bottom-white0-black50-white100 { background:linear-gradient(to bottom,rgba(255,255,255,1) 0%,rgba(0,0,0,1) 50%,rgba(255,255,255,1) 100%); }
+.linear-gradient-bottom-white0-black50-white100-alpha50 { background:linear-gradient(to bottom,rgba(255,255,255,.5) 0%,rgba(0,0,0,.5) 50%,rgba(255,255,255,.5) 100%); }
+.linear-gradient-right-black0-blue60 { background:linear-gradient(to right,rgba(0,0,0,1) 0%,rgba(0,0,255,1) 60%); }
+.linear-gradient-right-black0-red100 { background:linear-gradient(to right,rgba(0,0,0,1) 0%,rgba(255,0,0,1) 100%); }
+.linear-gradient-right-black40-red100 { background:linear-gradient(to right,rgba(0,0,0,1) 40%,rgba(255,0,0,1) 100%); }
+.linear-gradient-right-red0-black100 { background:linear-gradient(to right,rgba(255,0,0,1) 0%,rgba(0,0,0,1) 100%); }
+.linear-gradient-right-red0-black20-black80-red100 { background:linear-gradient(to right,rgba(255,0,0,1) 0%,rgba(0,0,0,1) 20%,rgba(0,0,0,1) 80%,rgba(255,0,0,1) 100%); }
+.linear-gradient-right-red0-black60 { background:linear-gradient(to right,rgba(255,0,0,1) 0%,rgba(0,0,0,1) 60%); }
+.margin-0 { margin:0; }
+.min-height-20 { min-height:20px; }
+.monospace-family { font-family:monospace; }
+.none-decoration { text-decoration:none; }
+.nowrap-space { white-space:nowrap; }
+.padding-5 { padding:5px; }
+.padding-20 { padding:20px; }
+.padding-40 { padding:40px; }
+.radius-10 { border-radius:10px; }
+.radius-10-40-10-10 { border-radius:10px 40px 10px 10px; }
+.radius-10-60-10-10 { border-radius:10px 60px 10px 10px; }
+.radius-10-60-60-10 { border-radius:10px 60px 60px 10px; }
+.radius-20 { border-radius:20px; }
+.radius-20-10-10-20 { border-radius:20px 10px 10px 20px; }
+.radius-20-60-60-20 { border-radius:20px 60px 60px 20px; }
+.radius-30-30-100-100 { border-radius:30px 30px 100px 100px; }
+.radius-35-35-200-200 { border-radius: 35px 35px 200px 200px; }
+.radius-40 { border-radius:40px; }
+.radius-40-10-10-10 { border-radius:40px 10px 10px 10px; }
+.radius-55 { border-radius:55px; }
+.radius-60-10-10-10 { border-radius:60px 10px 10px 10px; }
+.radius-60-10-10-60 { border-radius:60px 10px 10px 60px; }
+.radius-60-20-20-60 { border-radius:60px 20px 20px 60px; }
+.red-color { color:#f00; }
+.relative-position { position:relative; }
+.right-0 { right:0; }
+.right-35 { right:35%; }
+.right-35-x { right:35px; }
+.right-420 { right:420px; }
+.right-50 { right:50%; }
+.right-align { text-align:right; }
+.right-float { float:right; }
+.right-margin-5 { margin-right:5px; }
+.right-margin-10 { margin-right:10px; }
+.right-margin-30 { margin-right:30px; }
+.right-margin-35 { margin-right:35px; }
+.right-margin-auto { margin-right:auto; }
+.right-padding-10 { padding-right:10px; }
+.right-padding-20 { padding-right:20px; }
+.right-padding-30 { padding-right:30px; }
+.right-padding-50 { padding-right:50px; }
+.right-padding-60 { padding-right:60px; }
+.right-padding-80 { padding-right:80px; }
+.right-padding-100 { padding-right:100px; }
+.right-padding-150 { padding-right:150px; }
+.size-15 { font-size:15px; }
+.size-20 { font-size:20px; }
+.size-25 { font-size:25px; }
+.size-27 { font-size:27px; }
+.size-70 { font-size:70px; }
+.size-80 { font-size:80px; }
+.size-90 { font-size:90px; }
+.table-display { display:table; }
+.top-0 { top:0; }
+.top-120 { top:120px; }
+.top-190 { top:190px; }
+.top-200 { top:200px; }
+.top-235 { top:235px; }
+.top-margin--15 { margin-top:-15px; }
+.top-margin-10 { margin-top:10px; }
+.top-margin-15 { margin-top:15px; }
+.top-margin-20 { margin-top:20px; }
+.top-margin-40 { margin-top:40px; }
+.top-padding-5 { padding-top:5px; }
+.top-padding-20 { padding-top:20px; }
+.top-padding-30 { padding-top:30px; }
+.top-padding-35 { padding-top:35px; }
+.top-padding-40 { padding-top:40px; }
+.underline-decoration { text-decoration:underline; }
+.vertical-middle { vertical-align:middle; }
+.vertical-top { vertical-align:top; }
+.white-background { background:#fff; }
+.white-black-shadow { text-shadow:1px 1px #fff,1px -1px #fff,-1px 1px #fff,-1px -1px #fff,2px 2px #000,2px -2px #000,-2px 2px #000,-2px -2px #000; }
+.white-color { color:#fff; }
+.white-inset-border-10 { border:10px inset #fff; }
+.white-outset-border-10 { border:10px outset #fff; }
+.white-solid-border-top-2 { border-top:2px solid #fff; }
+.width-100 { width:100%; }
+.width-200 { width:200px; }
+.width-300 { width:300px; }
+.width-400 { width:400px; }
+.width-360 { width:360px; }
+.width-500 { width:500px; }
+.width-600 { width:600px; }
+.width-700 { width:700px; }
+.width-800 { width:800px; }
+.width-900 { width:900px; }
+.width-1200 { width:1200px; }
+.xx-large-size { font-size:xx-large; }

@@ -1,0 +1,36 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+	<div class="bottom-15 center-align fixed-position grey-inset-border-10-focus grey-outset-border-10 left-35-x left-margin-35 linear-gradient-bottom-blue0-black50-blue100-focus linear-gradient-bottom-black0-blue50-black100 opacity-80-focus padding-20 radius-55 right-35-x right-margin-35" id="footer">		
+		<h:panelGrid columnClasses="left-padding-10 right-padding-10,left-padding-10 right-padding-10,left-padding-10 right-padding-10" columns="3" styleClass="auto-margin black-black-shadow bolder-weight center-align none-decoration size-20 white-color">
+			<ui:repeat value="#{currency.currencyArray}" var="curr">
+				<h:outputText rendered="#{curr.locale eq 'en'}" value="#{curr.noun}" />
+				<h:form rendered="#{curr.locale eq 'en'}">
+					<h:commandLink action="#{currency.localeChange}" immediate="true">
+						<f:param name="loc" value="en" />
+						<h:graphicImage alt="en" library="default" name="png/britain.png" />
+					</h:commandLink>
+				</h:form>
+				<h:outputText rendered="#{curr.locale eq 'en'}" value="#{curr.adjective}" />
+			</ui:repeat>
+			<ui:repeat value="#{currency.currencyArray}" var="curr">
+				<h:outputText rendered="#{curr.locale eq 'pl'}" value="#{curr.noun}" />
+				<h:form rendered="#{curr.locale eq 'pl'}">
+					<h:commandLink action="#{currency.localeChange}" immediate="true">
+						<f:param name="loc" value="pl" />
+						<h:graphicImage alt="pl" library="default" name="png/poland.png" />
+					</h:commandLink>
+				</h:form>
+				<h:outputText rendered="#{curr.locale eq 'pl'}" value="#{curr.adjective}" />
+			</ui:repeat>
+			<ui:repeat value="#{currency.currencyArray}" var="curr">
+				<h:outputText rendered="#{curr.locale eq 'ru'}" value="#{curr.noun}" />
+				<h:form rendered="#{curr.locale eq 'ru'}">
+					<h:commandLink action="#{currency.localeChange}" immediate="true">
+						<f:param name="loc" value="ru" />
+						<h:graphicImage alt="ru" library="default" name="png/russia.png" />
+					</h:commandLink>
+				</h:form>
+				<h:outputText rendered="#{curr.locale eq 'ru'}" value="#{curr.adjective}" />
+			</ui:repeat>
+		</h:panelGrid>
+	</div>
+</ui:composition>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14330549889120" configfile="/skyski/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="658" id="pf14330550121771" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="1522" id="pf14330964953568" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14331049078460 pf14331049078471 pf14331049078472 pf14331049078473 pf14331049078474 pf14331049078475 pf14331049078476 pf14331049078477" path="/*"/>
+  <nodes xsi:type="pageflow:PFPage" name="webapp/content/shop.xhtml" id="pf14331049078478" referenceLink="//@navigationRule.0/@navigationCase.7/@toViewId|" inlinks="pf14331049078460" path="/content/shop.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="webapp/templates/registration_success/registration_success.xhtml" id="pf14331049078479" referenceLink="//@navigationRule.0/@navigationCase.6/@toViewId|" inlinks="pf14331049078471" path="/templates/registration_success/registration_success.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="webapp/templates/registration_failure/registration_failure.xhtml" id="pf143310490784710" referenceLink="//@navigationRule.0/@navigationCase.5/@toViewId|" inlinks="pf14331049078472" path="/templates/registration_failure/registration_failure.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="webapp/content/registration.xhtml" id="pf143310490784711" referenceLink="//@navigationRule.0/@navigationCase.4/@toViewId|" inlinks="pf14331049078473" path="/content/registration.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="webapp/content/logging.xhtml" id="pf143310490784712" referenceLink="//@navigationRule.0/@navigationCase.3/@toViewId|" inlinks="pf14331049078474" path="/content/logging.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="webapp/index.xhtml" id="pf143310490784713" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" inlinks="pf14331049078475" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="webapp/content/cart.xhtml" id="pf143310490784714" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf14331049078476" path="/content/cart.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="webapp/content/bibliography.xhtml" id="pf143310490784715" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14331049078477" path="/content/bibliography.xhtml"/>
+  <links id="pf14331049078460" target="pf14331049078478" source="pf14330964953568" outcome="shop"/>
+  <links id="pf14331049078471" target="pf14331049078479" source="pf14330964953568" outcome="registration_success"/>
+  <links id="pf14331049078472" target="pf143310490784710" source="pf14330964953568" outcome="registration_failure"/>
+  <links id="pf14331049078473" target="pf143310490784711" source="pf14330964953568" outcome="registration"/>
+  <links id="pf14331049078474" target="pf143310490784712" source="pf14330964953568" outcome="logging"/>
+  <links id="pf14331049078475" target="pf143310490784713" source="pf14330964953568" outcome="index"/>
+  <links id="pf14331049078476" target="pf143310490784714" source="pf14330964953568" outcome="cart"/>
+  <links id="pf14331049078477" target="pf143310490784715" source="pf14330964953568" outcome="bibliography"/>
+</pageflow:Pageflow>

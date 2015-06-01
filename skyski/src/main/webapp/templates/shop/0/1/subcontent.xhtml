@@ -1,0 +1,97 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+	<div class="absolute-position auto-overflow bottom-25 grey-alpha20-background grey-inset-border-10-focus grey-outset-border-10 left-50-x radius-60-20-20-60 right-420 top-0" id="subcontent">
+		<div class="container">
+			<h:form id="net">
+				<h:dataTable id="merchandise" styleClass="bottom-margin-15 left-margin-auto right-margin-auto top-margin-15" value="#{merchandise.filterModel}" var="item">
+					<h:column>
+						<f:facet name="header">
+							<div class="auto-margin black-black-shadow bold-weight bottom-padding-20 grey-outset-border-5 linear-gradient-bottom-black0-grey50-black100 radius-40-10-10-10 top-padding-20 white-color">
+								<h:outputText value="#{fn:toUpperCase(msgs.numeroSign)}" />
+							</div>
+						</f:facet>
+						<div class="black-black-shadow bold-weight bottom-padding-40 grey-inset-border-5 left-padding-20 linear-gradient-bottom-black0-white50-black100-alpha50-focus linear-gradient-bottom-white0-black50-white100-alpha50 radius-20 right-align right-padding-10 top-padding-40 size-20 white-color">
+							<h:outputText value="#{indexer.index}." />
+						</div>
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<div class="auto-margin black-black-shadow bold-weight bottom-padding-20 grey-outset-border-5 linear-gradient-bottom-black0-grey50-black100 radius-10 top-padding-20 white-color">
+								<h:outputText value="#{fn:toUpperCase(msgs.images)}" />
+							</div>
+						</f:facet>
+						<ui:param name="resourceName" value="images:/project1/#{ item.id lt 10 ? '0' : '' }#{item.id}.jpg" />
+						<ui:param name="resourcePath" value="#{resource[resourceName]}" />
+						<div class="center-align">
+							<h:graphicImage alt="#{item.name}" lang="#{msgs.lang}" rendered="#{resourcePath ne null}" styleClass="radius-20 scale-150-focus white-inset-border-10 white-outset-border-10-focus" value="#{resourcePath}" />
+							<h:graphicImage alt="#{item.name}" lang="#{msgs.lang}" rendered="#{resourcePath eq null}" styleClass="radius-20 scale-150-focus white-inset-border-10 white-outset-border-10-focus" value="#{resource['images:/project1/00.jpg']}" />
+						</div>
+					</h:column>
+					<h:column headerClass="content-1">
+						<f:facet name="header">						
+							<h:commandLink action="#{merchandise.sortByName}" styleClass="auto-margin black-black-shadow block-display bold-weight bottom-padding-20 grey-color-focus grey-inset-border-5-focus grey-outset-border-5 linear-gradient-bottom-black0-blue50-black100 linear-gradient-bottom-blue0-black50-blue100-focus none-decoration radius-10 top-padding-20 white-color" title="#{msgs.sortByName}">
+								<f:ajax render="merchandise" />
+								<h:outputText value="#{fn:toUpperCase(msgs.name)}" />
+							</h:commandLink>						
+						</f:facet>
+						<div class="black-black-shadow bold-weight bottom-padding-40 grey-inset-border-5 left-align left-padding-20 linear-gradient-bottom-white0-black50-white100-alpha50 nowrap-space radius-20-10-10-20 right-padding-10 size-20 top-padding-40 white-color">
+							<h:outputText value="#{fn:toUpperCase(fn:substring(item.name,0,1))}#{fn:substring(item.name,1,fn:length(item.name))}" />
+						</div>
+					</h:column>
+					<h:column headerClass="content-2">
+						<f:facet name="header">						
+							<h:commandLink action="#{merchandise.sortByPrice}" styleClass="auto-margin black-black-shadow block-display bold-weight bottom-padding-20 grey-color-focus grey-inset-border-5-focus grey-outset-border-5 linear-gradient-bottom-black0-blue50-black100 linear-gradient-bottom-blue0-black50-blue100-focus none-decoration radius-10 top-padding-20 white-color" title="#{msgs.sortByPrice}">
+								<f:ajax render="merchandise" />
+								<h:outputText value="#{fn:toUpperCase(msgs.price)}" />
+							</h:commandLink>					
+						</f:facet>
+						<div class="black-black-shadow bold-weight bottom-padding-40 grey-inset-border-5 left-padding-30 linear-gradient-bottom-white0-black50-white100-alpha50 nowrap-space radius-20 right-align right-padding-30 top-padding-40 size-20 white-color">
+							<h:outputText value="#{item.price * currency.rate}">
+								<f:convertNumber maxFractionDigits="2" minFractionDigits="2" />
+							</h:outputText>
+							<h:outputText styleClass="left-padding-10" value="#{currency.symbol}&#160;" />
+						</div>
+					</h:column>
+					<h:column headerClass="content-2">
+						<f:facet name="header">						
+							<h:commandLink action="#{merchandise.sortByAmount}" styleClass="auto-margin black-black-shadow block-display bold-weight bottom-padding-20 grey-color-focus grey-inset-border-5-focus grey-outset-border-5 linear-gradient-bottom-black0-blue50-black100 linear-gradient-bottom-blue0-black50-blue100-focus none-decoration radius-10 top-padding-20 white-color" title="#{msgs.sortByAmount}">
+								<f:ajax render="merchandise" />
+								<h:outputText value="#{fn:toUpperCase(msgs.amount)}" />
+							</h:commandLink>					
+						</f:facet>
+						<div class="black-black-shadow bold-weight bottom-padding-40 grey-inset-border-5 left-padding-50 linear-gradient-bottom-white0-black50-white100-alpha50 radius-20 right-align right-padding-50 top-padding-40 size-20 white-color">
+							<h:outputText rendered="#{!item.countable}" value="#{item.amount}">
+								<f:convertNumber maxFractionDigits="2" minFractionDigits="2" />
+							</h:outputText>
+							<h:outputText escape="true" rendered="#{!item.countable}" value="&#160;" />
+							<h:outputText rendered="#{!item.countable}" value="#{msgs.kilogram}" />
+							<h:outputText rendered="#{item.countable}" value="#{item.amount}">
+								<f:convertNumber integerOnly="true" />
+							</h:outputText>
+							<h:outputText escape="true" rendered="#{item.countable}" value="&#160;" />
+							<h:outputText rendered="#{item.countable}" value="#{msgs.pice}" />
+							<h:outputText styleClass="left-padding-10" value="&#160;" />
+						</div>
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<div class="auto-margin black-black-shadow bold-weight bottom-padding-20 grey-outset-border-5 linear-gradient-bottom-black0-grey50-black100 radius-10-40-10-10 top-padding-20 white-color">
+								<h:outputText value="#{fn:toUpperCase(msgs.addToCart)}" />
+							</div>
+						</f:facet>
+						<h:panelGroup layout="block" styleClass="black-black-shadow bold-weight bottom-padding-35 grey-inset-border-5 left-padding-20 #{authenticate.loggedIn ? 'linear-gradient-bottom-black0-white50-black100-alpha50-focus' : ''} linear-gradient-bottom-white0-black50-white100-alpha50 nowrap-space radius-20 right-align right-padding-20 top-padding-35 size-20">						
+							<h:inputText disabled="#{!authenticate.loggedIn}" id="addInput" maxlength="6" size="7" styleClass="black-color bold-weight grey-background height-30 monospace-family right-align right-margin-10 right-padding-10 size-20" validator="#{merchandise.validateProduct}" value="#{cart.amount}">
+								<f:ajax event="blur" render="@this" />
+								<f:ajax event="click" render="@this" />
+								<f:ajax event="keyup" render="@this" />
+							</h:inputText>
+							<h:commandButton action="#{cart.process}" id="addButtonAC" immediate="true" rendered="#{authenticate.loggedIn}" styleClass="black-background black-color-focus bold-weight bottom-padding-5 left-padding-10 radius-20 right-padding-10 top-padding-5 white-background-focus white-color" title="#{msgs.addToCart}" value="#{msgs.addToCart}">
+								<f:setPropertyActionListener target="#{cart.merchandiseId}" value="#{item.id}" />
+							</h:commandButton>
+							<h:commandButton disabled="#{!authenticate.loggedIn}" id="addButtonPV" rendered="#{!authenticate.loggedIn}" styleClass="black-color bold-weight bottom-padding-5 grey-background left-padding-10 radius-20 right-padding-10 top-padding-5" title="#{msgs.addToCart}" value="#{msgs.addToCart}" />						
+						</h:panelGroup>
+					</h:column>
+				</h:dataTable>
+			</h:form>
+		</div>
+	</div>
+</ui:composition>

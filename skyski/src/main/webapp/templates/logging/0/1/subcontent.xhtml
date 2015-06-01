@@ -1,0 +1,35 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+	<div id="subcontent">
+		<div class="container">
+			<h:form>
+				<h:panelGrid columns="3" id="logging" styleClass="auto-margin absolute-position auto-margin bottom-padding-30 family-3 grey-outset-border-5 left-0 left-padding-60 radius-35-35-200-200 right-0 right-padding-60 size-25 top-120 top-padding-30 width-1200">
+					<f:facet name="caption">
+						<h:outputText id="logging-caption" styleClass="bolder-weight center-align red-color white-shadow xx-large-size" value="#{fn:toUpperCase(msgs.logging)}" />
+					</f:facet>
+					<f:facet name="footer">        
+						<h:commandLink action="#{authenticate.process}" rendered="#{!authenticate.loggedIn}" styleClass="black-shadow block-display bolder-weight bottom-margin-20 bottom-padding-20 center-align family-5 grey-color-focus grey-inset-border-5-focus grey-outset-border-5 inherit-color linear-gradient-bottom-black0-red50-black100 linear-gradient-bottom-red0-black50-red100-focus none-decoration radius-40 top-margin-40 top-padding-20" title="#{msgs.logIn}" value="#{fn:toUpperCase(msgs.logIn)}" />
+						<h:commandLink action="#{authenticate.process}" rendered="#{authenticate.loggedIn}" styleClass="black-shadow block-display bolder-weight bottom-margin-20 bottom-padding-20 center-align family-5 grey-color-focus grey-inset-border-5-focus grey-outset-border-5 inherit-color linear-gradient-bottom-black0-red50-black100 linear-gradient-bottom-red0-black50-red100-focus none-decoration radius-40 top-margin-40 top-padding-20" title="#{msgs.logOut}" value="#{fn:toUpperCase(msgs.logOut)}" />
+					</f:facet>
+					<h:panelGroup layout="block" styleClass="width-400">
+						<h:outputText value="#{msgs.login}:" />
+					</h:panelGroup>
+					<h:panelGroup layout="block">
+						<h:inputText disabled="#{authenticate.loggedIn}" id="login" immediate="true" required="true" size="20" styleClass="height-40 left-padding-10" value="#{authenticate.login}" />						
+					</h:panelGroup>
+					<h:panelGroup id="login-msg" layout="block" styleClass="bold-weight red-color size-20 width-400">
+						<h:message for="login" />
+					</h:panelGroup>
+					<h:panelGroup layout="block" styleClass="width-400">
+						<h:outputText value="#{msgs.password}:" />
+					</h:panelGroup>
+					<h:panelGroup layout="block">
+						<h:inputSecret disabled="#{authenticate.loggedIn}" id="password" immediate="true" required="true" size="20" styleClass="height-40 left-padding-10" value="#{authenticate.password}" />
+					</h:panelGroup>
+					<h:panelGroup id="password-msg" layout="block" styleClass="bold-weight red-color size-20 width-400">		
+						<h:message for="password" />
+					</h:panelGroup>					
+				</h:panelGrid>
+			</h:form>
+		</div>
+	</div>
+</ui:composition>
