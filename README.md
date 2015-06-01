@@ -2,11 +2,17 @@ SkyskiProject
 =============
 
 Description: Online store
+Needs: Java EE 6 certified application server, SQL database management system
+Tested on: GlassFish Server Open Source Edition 4.1, PostgreSQL 9.3
+To do: 
+1. Create new database "skyski".
+2. Execute scripts in folder:
+  * sql > ddl > sequences
+  * sql > ddl > tables
+  * sql > dml
+3. Configure "PostgresqlPool" JDBC connection pool.
+4. Configure "jdbc/postgresql" JDBC resource.
+5. Configure "mail/skyskiGmail" JavaMail session.
+6. Add user (User ID: user, Group List: appuser) to default-config > Security > Realms > file.
 
-Needs: Java EE 6 certified application servers, SQL database management system
-
-Tested on: GlassFish 3.1 app server, PostgreSQL 9.3 dbms
-
-To set up on server: PostgreSQL JDBC connection pool & jdbc/postgresql resource, mail/skyskiGmail JavaMail session, appuser-user security file realm
-
-Technical note: WEB module contains EJB classes
+Technical note: WEB module contains EJB classes.
