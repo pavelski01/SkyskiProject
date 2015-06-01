@@ -14,5 +14,4 @@ To do:
 4.  Configure "jdbc/postgresql" JDBC resource.  
 5.  Configure "mail/skyskiGmail" JavaMail session.  
 6.  Add user (User ID: user, Group List: appuser) to default-config > Security > Realms > file.  
-
-Technical note: WEB module contains EJB classes, skyski folder contains Eclipse IDE project.
+Technical note: WEB module contains EJB classes, skyski folder contains Eclipse IDE project.  
