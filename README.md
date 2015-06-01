@@ -14,4 +14,4 @@ sql > dml
 4.  Configure "jdbc/postgresql" JDBC resource.  
 5.  Configure "mail/skyskiGmail" JavaMail session.  
 6.  Add user (User ID: user, Group List: appuser) to default-config > Security > Realms > file.  
-Technical note: EJB classes inside of WEB module; contains: Apache Maven POM file, Eclipse IDE project files.  
+Technical note: EJB classes inside of WEB module; contains Apache Maven POM file, Eclipse IDE project files.  
