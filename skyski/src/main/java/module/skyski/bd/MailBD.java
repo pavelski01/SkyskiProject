@@ -67,7 +67,7 @@ public class MailBD
 		String expand;
 		if (this.forename == null || this.forename.equals(""))
 		{
-			expand = Messages.getMessage("module.skyski.msg.messages" + _currentLocale, "buy", null).getSummary() + "\n";
+			expand = Messages.getMessage("module.skyski.msg.messages" + _currentLocale, "buy", null).getSummary();
 			expand = expand.substring(0, 1).toUpperCase().concat(expand.substring(1, expand.length())).concat(":\n"); 
 		}
 		else
