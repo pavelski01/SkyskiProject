@@ -18,10 +18,10 @@
 		<class>module.skyski.orm.Client</class>
 		<properties>
 			<property name="eclipselink.target-database" value="PostgreSQL"/>
-	    	<property name="eclipselink.jdbc.url" value="jdbc:postgresql://localhost:5432/skyski"/>
-	    	<property name="eclipselink.jdbc.driver" value="org.postgresql.Driver"/>
-	    	<property name="eclipselink.jdbc.user" value="postgres"/>
-	    	<property name="eclipselink.jdbc.password" value="admin"/>
+	    		<property name="eclipselink.jdbc.url" value="jdbc:postgresql://localhost:5432/skyski"/>
+	    		<property name="eclipselink.jdbc.driver" value="org.postgresql.Driver"/>
+	    		<property name="eclipselink.jdbc.user" value="postgres"/>
+	    		<property name="eclipselink.jdbc.password" value="admin"/>
 		</properties>
 	</persistence-unit>
 </persistence>
