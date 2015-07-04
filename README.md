@@ -1,7 +1,7 @@
 SkyskiProject
 =============
 
-Description: Online store (bachelor)
+Description: Online store (bachelor)  
 Needs: Java EE 6 certified application server, SQL database management system  
 Tested on: GlassFish Server Open Source Edition 4.1, PostgreSQL 9.3  
 To do:  
