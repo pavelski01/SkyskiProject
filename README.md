@@ -8,9 +8,9 @@ To do:
 [PostgreSQL]  
 1.  Create new database "skyski".  
 2.  Execute queries in folder:  
-sql > ddl > sequences  
-sql > ddl > tables  
-sql > dml  
+sql/ddl/sequences  
+sql/ddl/tables  
+sql/dml  
 [GlassFish]  
 3.  Configure "PostgresqlPool" JDBC connection pool.  
 4.  Configure "jdbc/postgresql" JDBC resource.  
