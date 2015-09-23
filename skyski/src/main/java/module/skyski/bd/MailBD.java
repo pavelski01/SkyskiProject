@@ -41,8 +41,7 @@ public class MailBD
 		mime.setSentDate(new Date());
 		mime.setHeader("Content-Type", "text/plain");
 		mime.saveChanges();
-		Transport trans;
-		trans = this.mailSession.getTransport();
+		Transport trans = this.mailSession.getTransport();
 		String serverUsername = this.mailSession.getProperty("mail.smtps.username");
 		String serverPassword = this.mailSession.getProperty("mail.smtps.password");
 		trans.connect(serverUsername, serverPassword);
