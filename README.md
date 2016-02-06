@@ -18,3 +18,4 @@ sql/dml
 4.  Configure JavaMail session.  
 5.  Add user with role manager.  
 Technical note: EJB classes inside of WEB module; contains Apache Maven POM file, Eclipse IDE project files.  
+ 
