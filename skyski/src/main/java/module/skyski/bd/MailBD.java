@@ -36,20 +36,13 @@ public class MailBD
 		this.mailSession.setDebug(true);
 		MimeMessage mime = new MimeMessage(this.mailSession);
 		mime.setRecipients(Message.RecipientType.TO, InternetAddress.parse(this.email, false));
-		mime.setSubject(subjectTitle);		
-		mime.setText(registrationInfo);
+		mime.setSubject(subjectTitle, "UTF-8");
+		mime.setText(registrationInfo, "UTF-8");
 		mime.setSentDate(new Date());
-		mime.setHeader("Content-Type", "text/plain");
+		mime.setHeader("Content-Type", "text/plain; charset=UTF-8");
 		mime.saveChanges();
-		Transport trans = this.mailSession.getTransport();
-		String serverUsername = this.mailSession.getProperty("mail.smtps.username");
-		String serverPassword = this.mailSession.getProperty("mail.smtps.password");
-		trans.connect(serverUsername, serverPassword);
-		trans.sendMessage(mime, mime.getAllRecipients());
-		trans.close();
-		this.email = null;
-		this.forename = null;
-		this.login = null;
+		Transport.send(mime, mime.getAllRecipients());
+		this.email = this.forename = this.login = null;
 		this.passwd = null;
 	}
 
@@ -91,29 +84,22 @@ public class MailBD
 		this.mailSession.setDebug(true);
 		MimeMessage mime = new MimeMessage(this.mailSession);
 		mime.setRecipients(Message.RecipientType.TO, InternetAddress.parse(this.email, false));
-		mime.setSubject(subjectTitle);		
-		mime.setText(message);
+		mime.setSubject(subjectTitle, "UTF-8");		
+		mime.setText(message, "UTF-8");
 		mime.setSentDate(new Date());
-		mime.setHeader("Content-Type", "text/plain");
+		mime.setHeader("Content-Type", "text/plain; charset=UTF-8");
 		mime.saveChanges();
-		Transport trans = this.mailSession.getTransport();
-		String serverUsername = this.mailSession.getProperty("mail.smtps.username");
-		String serverPassword = this.mailSession.getProperty("mail.smtps.password");
-		trans.connect(serverUsername, serverPassword);
-		trans.sendMessage(mime, mime.getAllRecipients());
-		trans.close();
-		this.email = null;
-		this.forename = null;
-		this.login = null;
+		Transport.send(mime, mime.getAllRecipients());
+		this.email = this.forename = this.login = null;
 		this.passwd = null;
 	}
 	
-	public void setPasswd(Character _passwd) { this.passwd = _passwd;	}
+	public void setPasswd(Character _passwd) { this.passwd = _passwd; }
 	public void setEmail(String _email) { this.email = _email; }
 	public void setForename(String _forename) { this.forename = _forename; }
 	public void setLogin(String _login) { this.login = _login; }
 
-	@Resource(name="mail/skyskiGmail") private Session mailSession;
+	@Resource(name="java:jboss/mail/gmail") private Session mailSession;
 	private Character passwd;
 	private String email;
 	private String forename;

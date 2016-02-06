@@ -9,5 +9,4 @@
     	<principal-name>UserRole</principal-name>
     	<group-name>appuser</group-name>
 	</security-role-mapping>
-	<class-loader delegate="true"/>
 </glassfish-web-app>

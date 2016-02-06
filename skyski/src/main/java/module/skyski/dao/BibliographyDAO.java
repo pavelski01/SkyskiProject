@@ -4,6 +4,8 @@ import module.skyski.dto.BibliographyDTO;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateful;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.io.Serializable;
@@ -16,7 +18,7 @@ import java.util.List;
 {
 	public BibliographyDAO() {}
 	
-	@PostConstruct private void initialize()
+	@PostConstruct @TransactionAttribute(TransactionAttributeType.REQUIRES_NEW) private void initialize()
 	{
 		List<Object[]> resultList = this.em.createQuery(
 			"SELECT a.forename, a.surname, b.title, b.volume, b.edition, b.placeOfPublication, b.yearOfPublication "

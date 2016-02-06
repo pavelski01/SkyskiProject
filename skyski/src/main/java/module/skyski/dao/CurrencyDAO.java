@@ -8,13 +8,15 @@ import java.util.Comparator;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateful;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 @Stateful
-public class CurrencyDAO {
-	
-	@PostConstruct private void initialize()
+public class CurrencyDAO
+{
+	@PostConstruct @TransactionAttribute(TransactionAttributeType.REQUIRES_NEW) private void initialize()
 	{
 		this.resultList = this.em.createQuery(
 			"SELECT c.id, c.code, c.locale, c.rate, c.symbol, c.noun, c.adjective "	+ 

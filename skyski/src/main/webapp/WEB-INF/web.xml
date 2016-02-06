@@ -30,6 +30,10 @@
     		<param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
     		<param-value>resources.application</param-value>
   	</context-param>
+  	<login-config>
+  		<auth-method>BASIC</auth-method>
+  		<realm-name>file</realm-name>
+  	</login-config>
   	<mime-mapping>
     		<extension>ttf</extension>
     		<mime-type>font/truetype</mime-type>
@@ -39,7 +43,7 @@
     		<persistence-unit-name>skyskiPu</persistence-unit-name>
   	</persistence-context-ref>
   	<security-constraint>
-    		<display-name>Application Pages</display-name>
+   			<display-name>Application Pages</display-name>
     		<web-resource-collection>
       			<web-resource-name>Protected</web-resource-name>
       			<description>Protected resources</description>
@@ -48,8 +52,8 @@
       			<http-method>POST</http-method>
     		</web-resource-collection>
     		<auth-constraint>
-      			<description>UserRole</description>
-      			<role-name>user</role-name>
+      			<description>User Role</description>
+      			<role-name>appuser</role-name>
     		</auth-constraint>
     		<user-data-constraint>
       			<description>CONFIDENTIAL requires SSL</description>
@@ -59,14 +63,14 @@
   	<security-constraint>
     		<display-name>Templates Folder</display-name>
     		<web-resource-collection>
-			<web-resource-name>Templates</web-resource-name>
+				<web-resource-name>Templates</web-resource-name>
         		<url-pattern>/templates/*</url-pattern>
     		</web-resource-collection>
     		<auth-constraint/>
-    	</security-constraint>
+   	</security-constraint>
 	<security-role>
-    		<description>UserRole</description>
-    		<role-name>user</role-name>
+    		<description>User Role</description>
+    		<role-name>appuser</role-name>
   	</security-role>
   	<session-config>
     		<session-timeout>60</session-timeout>

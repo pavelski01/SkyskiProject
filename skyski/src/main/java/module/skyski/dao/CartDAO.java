@@ -96,13 +96,13 @@ public class CartDAO implements Serializable
 			ut.begin();			
 			quantity = (Double)this.em.createNativeQuery(
 				"SELECT amount FROM Transactions WHERE merchandise_id=" +
-					Integer.toString(_id) + " AND client_id = " + _clientId + ""
+					Integer.toString(_id) + " AND client_id = " + _clientId
 			).getSingleResult();
 			this.em.createNativeQuery(
-				"UPDATE Merchandise SET amount = amount + " + quantity + " WHERE id = " + Integer.toString(_id) + ""
+				"UPDATE Merchandise SET amount = amount + " + quantity + " WHERE id = " + Integer.toString(_id)
 			).executeUpdate();
 			this.em.createNativeQuery(
-				"DELETE FROM Transactions t WHERE merchandise_id = " + Integer.toString(_id) +
+				"DELETE FROM Transactions WHERE merchandise_id = " + Integer.toString(_id) +
 					" AND client_id=" + _clientId + ""
 			).executeUpdate();
 			ut.commit();
