@@ -13,9 +13,9 @@
 			<supported-locale>pl</supported-locale>
 			<supported-locale>ru</supported-locale>
 		</locale-config>
-		<message-bundle>module.skyski.msg.messages</message-bundle>
+		<message-bundle>module.core.msg.messages</message-bundle>
 		<resource-bundle>
-			<base-name>module.skyski.msg.messages</base-name>
+			<base-name>module.core.msg.messages</base-name>
 			<var>msgs</var>
 		</resource-bundle>
 	</application>
@@ -26,7 +26,7 @@
 	</managed-bean>
 	<managed-bean>
 		<managed-bean-name>indexer</managed-bean-name>
-		<managed-bean-class>module.skyski.dcr.Indexer</managed-bean-class>
+		<managed-bean-class>module.core.dcr.Indexer</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
 	<navigation-rule>

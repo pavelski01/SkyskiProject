@@ -6,19 +6,16 @@
 	version="2.0"
 >
 	<persistence-unit name="skyskiPu" transaction-type="JTA">
-		<!-- <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> -->
 		<jta-data-source>java:jboss/jdbc/mysql</jta-data-source>
-		<class>module.skyski.orm.Authors</class>
-		<class>module.skyski.orm.Books</class>
-		<class>module.skyski.orm.Currency</class>
-		<class>module.skyski.orm.Merchandise</class>
-		<class>module.skyski.orm.MerchandisePl</class>
-		<class>module.skyski.orm.MerchandiseRu</class>
-		<class>module.skyski.orm.Transactions</class>
-		<class>module.skyski.orm.Client</class>
+		<class>module.core.orm.Authors</class>
+		<class>module.core.orm.Books</class>
+		<class>module.core.orm.Currency</class>
+		<class>module.core.orm.Merchandise</class>
+		<class>module.core.orm.MerchandisePl</class>
+		<class>module.core.orm.MerchandiseRu</class>
+		<class>module.core.orm.Transactions</class>
+		<class>module.core.orm.Client</class>
 		<properties>
-			<!-- <property name="eclipselink.target-database" value="PostgreSQL"/> -->
-			<!-- <property name="eclipselink.target-database" value="MySQL"/> -->
     		<property name="javax.persistence.jdbc.driver" value="com.mysql.Driver"/>
     		<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/skyski"/>
     		<property name="javax.persistence.jdbc.user" value="root"/>
