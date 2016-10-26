@@ -2,7 +2,7 @@ SkyskiProject
 =============
 
 Description: Online store (bachelor)  
-Needs: Java EE 6+ certified application server, SQL database management system.  
+Needs: Java EE 6+ certified application server, Relational database management system.  
 Tested on:  
 1. Application Server: GlassFish Server Open Source Edition 4.1, JBoss Application Server WildFly Full 10.0.0.Final.  
 2. Database Management System: PostgreSQL 9.3, MySQL 5.7.10.  
